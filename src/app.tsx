@@ -4,7 +4,7 @@ import "antd/dist/antd.css";
 
 const App = (props: any) => {
   return (
-    <Layout>
+    <Layout {...props}>
       <Layout.Content>
         <DatePicker />
         <Button
