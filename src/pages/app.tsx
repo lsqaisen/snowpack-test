@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ConfigProvider, DatePicker, message } from "antd";
+import { ConfigProvider, DatePicker, message, version } from "antd";
 import { useInterval } from "ahooks";
 import zhCN from "antd/lib/locale/zh_CN";
 import moment from "moment";
