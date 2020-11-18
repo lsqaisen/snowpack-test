@@ -6,6 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Web site created using create-snowpack-app" />
   <title>Snowpack App</title>
+  <script>
+    console.log((async (path) => {
+      try {
+        return await import(`../web_modules/${path}.js`)
+      } catch (error) {
+
+      }
+    })('react-dom'));
+    (async function () {
+      window.require = (path) => {
+        const d = Promise.any([import(`../web_modules/${path}.js`)])
+        console.log(d.getStatu)
+        return window[path]
+      }
+    })()
+  </script>
 </head>
 
 <body>

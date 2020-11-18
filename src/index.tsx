@@ -1,31 +1,31 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import dva from "dva";
+import dva from "dva";
 import App from "./pages/app";
 
-// const app = dva();
-// app.model({
-//   namespace: "count",
-//   state: 0,
-//   reducers: {
-//     add(count) {
-//       return count + 1;
-//     },
-//     minus(count) {
-//       return count - 1;
-//     },
-//   },
-// });
+const app = dva();
+app.model({
+  namespace: "count",
+  state: 0,
+  reducers: {
+    add(count) {
+      return count + 1;
+    },
+    minus(count) {
+      return count - 1;
+    },
+  },
+});
 
-// // 4. Router
-// app.router(() => (
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>
-// ));
+// 4. Router
+app.router(() => (
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+));
 
-// // 5. Start
-// app.start("#root");
+// 5. Start
+app.start("#root");
 
 ReactDOM.render(
   <React.StrictMode>
