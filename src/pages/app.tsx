@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ConfigProvider, DatePicker, message, version } from "antd";
 import { useInterval } from "ahooks";
+import { connect } from "dva";
 import zhCN from "antd/lib/locale/zh_CN";
 import moment from "moment";
 import "moment/locale/zh-cn";
@@ -9,7 +10,8 @@ import "./index.css";
 
 moment.locale("zh-cn");
 
-const App = () => {
+const App = ({ count: _count }: any) => {
+  console.log(_count);
   const [date, setDate] = useState(null);
   const [count, setCount] = useState<number>(0);
   useInterval(() => {
@@ -34,4 +36,7 @@ const App = () => {
   );
 };
 
-export default App;
+export default connect((props: any) => {
+  console.log(props);
+  return { count: props.count };
+})(App);
