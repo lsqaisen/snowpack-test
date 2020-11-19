@@ -1,6 +1,7 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import dva from "dva";
-import App from "./pages/app";
+import Router from "./router";
 console.log(dva);
 const app = (dva as any).default();
 app.model({
@@ -17,7 +18,7 @@ app.model({
 });
 
 // 4. Router
-app.router((props: any) => <App />);
+app.router((props: any) => <Router />);
 
 // 5. Start
 app.start("#root");

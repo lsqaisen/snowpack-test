@@ -10,12 +10,13 @@ import "./index.css";
 
 moment.locale("zh-cn");
 
-const App = ({ count: _count }: any) => {
+const App = ({ count: _count, dispatch }: any) => {
   console.log(_count);
   const [date, setDate] = useState(null);
   const [count, setCount] = useState<number>(0);
   useInterval(() => {
     setCount(count + 1);
+    dispatch({ type: "count/add", payload: count + 1 });
   }, 1000);
   const handleChange = (value: any) => {
     message.info(
