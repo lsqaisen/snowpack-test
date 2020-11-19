@@ -26,7 +26,7 @@ const App = ({ count: _count, dispatch }: any) => {
   };
   return (
     <ConfigProvider locale={zhCN}>
-      <div style={{ width: 400, margin: "100px auto" }}>
+      <div className="App" style={{ width: 400, margin: "100px auto" }}>
         <DatePicker onChange={handleChange} />
         <div style={{ marginTop: 16 }}>
           当前日期：{date ? (date as any).format("YYYY年MM月DD日") : "未选择"}
