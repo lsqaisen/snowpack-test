@@ -5,6 +5,7 @@ import Layout from "./layout/";
 import App from "./pages/app";
 import About from "./pages/about";
 import Home from "./pages/home";
+import Users from "./pages/users/users";
 
 export default () => {
   // let match = useRouteMatch();
